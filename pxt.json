@@ -1,0 +1,21 @@
+{
+  "name": "arraysplus",
+  "version": "0.0.1",
+  "description": "Napredni blokovi za rad s nizovima (number[]) na micro:bitu",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": [
+    "api.ts",
+    "README.md"
+  ],
+  "testFiles": [],
+  "targetVersions": {
+    "target": "6.0.19",
+    "targetId": "microbit"
+  },
+  "supportedTargets": [
+    "microbit"
+  ],
+  "preferredEditor": "blocksprj"
+}
