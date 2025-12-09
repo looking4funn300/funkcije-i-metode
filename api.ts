@@ -1,24 +1,24 @@
 /**
- * ArraysPlus - napredne funkcije za nizove (number[]) kao MakeCode blokovi
+ * ArraysPlus - advanced functions for arrays (number[]) as MakeCode blocks
  */
 //% color=#2b7bb9 weight=100 icon="\uf03a"
 namespace ArraysPlus {
     // Pomoćne funkcije i implementacije unaprijed radi kompatibilnosti s PXT
-    //% blockId="ap_push" block="stavi %value u %arr"
+    //% blockId="ap_push" block="push %value to %arr"
     //% arr.shadow=variables_get
     export function push(arr: number[], value: number): void {
         if (!arr) return
         arr.push(value)
     }
 
-    //% blockId="ap_pop" block="ukloni zadnji iz %arr"
+    //% blockId="ap_pop" block="pop from %arr"
     //% arr.shadow=variables_get
     export function pop(arr: number[]): number {
         if (!arr || arr.length == 0) return 0
         return arr.pop() || 0
     }
 
-    //% blockId="ap_get" block="dohvati element s indeksom %index iz %arr"
+    //% blockId="ap_get" block="get element at index %index of %arr"
     //% index.min=0
     //% arr.shadow=variables_get
     export function get(arr: number[], index: number): number {
@@ -28,7 +28,7 @@ namespace ArraysPlus {
         return arr[index]
     }
 
-    //% blockId="ap_set" block="postavi element s indeksom %index u %arr na %value"
+    //% blockId="ap_set" block="set element at index %index of %arr to %value"
     //% index.min=0
     //% arr.shadow=variables_get
     export function set(arr: number[], index: number, value: number): void {
@@ -38,14 +38,14 @@ namespace ArraysPlus {
         arr[index] = value
     }
 
-    //% blockId="ap_length" block="duljina %arr"
+    //% blockId="ap_length" block="length of %arr"
     //% arr.shadow=variables_get
     export function length(arr: number[]): number {
         if (!arr) return 0
         return arr.length
     }
 
-    //% blockId="ap_indexOf" block="index od %value u %arr"
+    //% blockId="ap_indexOf" block="index of %value in %arr"
     //% arr.shadow=variables_get
     export function indexOf(arr: number[], value: number): number {
         if (!arr) return -1
@@ -55,13 +55,13 @@ namespace ArraysPlus {
         return -1
     }
 
-    //% blockId="ap_contains" block="sadrži %arr vrijednost %value?"
+    //% blockId="ap_contains" block="contains %value in %arr?"
     //% arr.shadow=variables_get
     export function contains(arr: number[], value: number): boolean {
         return indexOf(arr, value) !== -1
     }
 
-    //% blockId="ap_sum" block="zbroj %arr"
+    //% blockId="ap_sum" block="sum of %arr"
     //% arr.shadow=variables_get
     export function sum(arr: number[]): number {
         if (!arr) return 0
@@ -70,14 +70,14 @@ namespace ArraysPlus {
         return s
     }
 
-    //% blockId="ap_average" block="prosjek %arr"
+    //% blockId="ap_average" block="average of %arr"
     //% arr.shadow=variables_get
     export function average(arr: number[]): number {
         if (!arr || arr.length == 0) return 0
         return sum(arr) / arr.length
     }
 
-    // jednostavna sortiranja radi kompatibilnosti s PXT
+    // simple selection sort for compatibility with PXT
     function selectionSortAsc(arr: number[]): void {
         for (let i = 0; i < arr.length - 1; i++) {
             let minIdx = i
@@ -92,7 +92,7 @@ namespace ArraysPlus {
         }
     }
 
-    //% blockId="ap_sortAsc" block="sortiraj %arr rastuće"
+    //% blockId="ap_sortAsc" block="sort %arr ascending"
     //% arr.shadow=variables_get
     export function sortAsc(arr: number[]): number[] {
         if (!arr) return []
@@ -100,12 +100,12 @@ namespace ArraysPlus {
         return arr
     }
 
-    //% blockId="ap_sortDesc" block="sortiraj %arr padajuće"
+    //% blockId="ap_sortDesc" block="sort %arr descending"
     //% arr.shadow=variables_get
     export function sortDesc(arr: number[]): number[] {
         if (!arr) return []
         selectionSortAsc(arr)
-        // obrni
+        // reverse
         let i = 0
         let j = arr.length - 1
         while (i < j) {
@@ -118,12 +118,11 @@ namespace ArraysPlus {
         return arr
     }
 
-    //% blockId="ap_shuffle" block="promiješaj %arr"
+    //% blockId="ap_shuffle" block="shuffle %arr"
     //% arr.shadow=variables_get
     export function shuffle(arr: number[]): number[] {
         if (!arr) return []
         for (let i = arr.length - 1; i > 0; i--) {
-            // koristi Math.random radi kompatibilnosti
             let j = Math.floor(Math.random() * (i + 1))
             let t = arr[i]
             arr[i] = arr[j]
@@ -132,7 +131,7 @@ namespace ArraysPlus {
         return arr
     }
 
-    //% blockId="ap_concat" block="spoji %a i %b"
+    //% blockId="ap_concat" block="concat %a and %b"
     //% a.shadow=variables_get
     //% b.shadow=variables_get
     export function concat(a: number[], b: number[]): number[] {
@@ -144,7 +143,7 @@ namespace ArraysPlus {
         return out
     }
 
-    //% blockId="ap_unique" block="jedinstveni elementi iz %arr"
+    //% blockId="ap_unique" block="unique elements of %arr"
     //% arr.shadow=variables_get
     export function unique(arr: number[]): number[] {
         if (!arr) return []

@@ -1,17 +1,17 @@
 # ArraysPlus
 
-Napredni blokovi za rad s nizovima (number[]) u MakeCode micro:bit.
+Advanced blocks for working with numeric and text arrays (number[] and string[]) on the MakeCode micro:bit.
 
-Kako koristiti:
-1. Otvori https://makecode.microbit.org
-2. Klikni Settings (zupčanik) → Extensions → u polje zalijepi:
+How to use:
+1. Open https://makecode.microbit.org
+2. Click Settings (gear) → Extensions → paste one of the following into the dialog:
    - github:looking4funn300/funkcije-i-metode
-   - ili cijeli URL: https://github.com/looking4funn300/funkcije-i-metode
-3. Nakon uvoza u Toolboxu će se pojaviti kategorija "ArraysPlus" s blokovima.
+   - or the full URL: https://github.com/looking4funn300/funkcije-i-metode
+3. After importing, a category named "ArraysPlus" will appear in the Toolbox with the available blocks.
 
-Primjer korištenja u Blocks editoru:
-- Kreiraj varijablu tipa Array (Number).
-- Koristi blokove ArraysPlus: stavi (push), ukloni zadnji (pop), dohvati/set element, sortiraj, promiješaj, zbroj, prosjek, jedinstveni elementi, itd.
+Example usage in the Blocks editor:
+- Create a variable of type Array (Number).
+- Use ArraysPlus blocks: push, pop, get/set element, sort, shuffle, sum, average, unique, etc.
 
-Napomena:
-- Ova ekstenzija radi s nizovima brojeva (number[]). Ako želiš rad s tekstualnim nizovima (string[]), mogu dodati i te blokove.
+Notes:
+- This extension currently provides blocks for number[] arrays. If you want string[] (text arrays) blocks added as well, tell me and I will add them.
